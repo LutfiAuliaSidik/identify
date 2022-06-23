@@ -88,4 +88,19 @@ if ( imageGallery ) {
     }
   });
 }
+// container-image 
+const containerImage = document.querySelector('.container-image');
+const imageDetail = document.querySelector('.image-detail');
+const imageDetailmg = document.querySelector('.image-detail img');
+
+if ( containerImage ) {
+  containerImage.addEventListener('click', function(e) {
+    if ( e.target.className == "c-image") {
+      imageDetail.classList.add('image-detail-active');
+      imageDetailmg.src = e.target.src;
+    } else if ( e.target.className == "fa-solid fa-circle-xmark" ) {
+      imageDetail.classList.remove('image-detail-active');
+    }
+  });
+}
 
